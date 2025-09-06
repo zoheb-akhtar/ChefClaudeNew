@@ -235,7 +235,7 @@ const getAllRecipes = async (req, res) => {
 
         const recipes = await pool.query(`${query} ORDER BY updated_at DESC`, values);
         if (recipes.rows.length === 0) {
-            return res.status(200).json([]);
+            return res.status(200).json({recipes: []});
         }
 
         res.status(200).json({recipes: recipes.rows});

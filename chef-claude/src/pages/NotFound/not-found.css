@@ -1,0 +1,58 @@
+.not-found-page-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.text-404 {
+    font-size: 52px;
+    font-weight: bold;
+
+}
+
+.subtitle-404 {
+    color: hsl(0, 0%, 35%);
+    font-size: 42px;
+
+}
+
+.subline-404 {
+    color: gray;
+    font-size: 18px;
+}
+
+.buttons-container-404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 8px;
+}
+
+.button-404 {
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.15s ease background-color;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.button-404 {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.dashboard-404-btn {
+    background-color: #D17557;
+    color: white
+}
+
+.dashboard-404-btn:hover {
+    background-color: hsl(15, 57%, 53%)
+}

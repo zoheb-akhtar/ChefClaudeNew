@@ -1,0 +1,46 @@
+.user-profile-edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+}
+
+.edit-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.edit-input-label {
+    color: gray;
+}
+
+.edit-input {
+    width: 400px;
+    background: transparent;
+    font-size: 18px;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.edit-input:focus {
+    outline: none;
+}
+
+.edit-img {
+    margin-left: -32px;
+    z-index: 100;
+    width: 18px;
+    cursor: pointer;
+}
+
+.edit-input-editable {
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.edit-input-label-editable {
+    color: black;
+
+}

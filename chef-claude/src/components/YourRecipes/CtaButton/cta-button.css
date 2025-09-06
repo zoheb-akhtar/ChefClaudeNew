@@ -1,0 +1,29 @@
+.your-recipe-button {
+    padding: 0.75rem;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.15s ease background-color;
+}
+
+.start-cooking {
+    background-color: #D17557;
+    color: white;
+}
+
+.start-cooking:hover {
+    background-color: hsl(15, 57%, 53%); 
+}
+
+.resume-cooking {
+    background-color: #4A90E2;
+    color: white;
+    font-size: 16px;
+}
+
+.resume-cooking:hover {
+    background-color: hsl(212, 72%, 54%);;
+}
+

@@ -1,0 +1,38 @@
+.sidebar-page-link {
+    text-decoration: none;
+    color: black;
+
+}
+
+.sidebar-page-link-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+    transition: 0.15s ease background-color;
+    width: 100%;
+    padding: 0.75rem 0.75rem; 
+    box-sizing: border-box; 
+}
+
+.sidebar-page-link-container:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.sidebar-link-label {
+    font-size: 16px;
+}
+
+.sidebar-link-image {
+    width: 18px;
+}
+
+
+.sidebar-page-link-active {
+    text-decoration: none;
+    color: black;
+    
+    .sidebar-page-link-container {
+        background-color: hsl(0, 0%, 90%);
+    }
+}

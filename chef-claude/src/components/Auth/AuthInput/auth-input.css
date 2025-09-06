@@ -1,0 +1,11 @@
+.auth-input-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-password-icon {
+    margin-bottom: -48px;
+    z-index: 100;
+    cursor: pointer;
+}

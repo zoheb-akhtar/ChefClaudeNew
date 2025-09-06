@@ -1,0 +1,38 @@
+.recent-recipe-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.recipe-info .recipe-title {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.9rem;
+}
+
+.recipe-info .recipe-date {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.recipe-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.rating-stars {
+    color: #fbbf24;
+    font-size: 0.8rem;
+}
+
+.rating-number {
+    font-size: 0.75rem;
+    color: #6b7280;
+}

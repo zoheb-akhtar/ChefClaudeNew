@@ -1,0 +1,12 @@
+.auth-message-container  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .auth-link {
+    text-decoration: none;
+    color: #D17557;
+    font-weight: 500;
+  }

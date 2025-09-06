@@ -1,0 +1,82 @@
+.recipe-card-container {
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    gap: 6px
+}
+
+.recipe-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.recipe-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    margin-top: 20px;
+
+}
+
+.recipe-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bullet {
+    margin-right: 4px;
+}
+
+.start-cooking-button,
+.add-to-recipes-button {
+    padding: 0.65rem;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s ease background-color;
+}
+
+.add-to-recipes-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: black;
+}
+
+.add-to-recipes-button:disabled {
+    cursor: default;
+    color: black;
+
+    .add-to-recipes-button:hover {
+        background-color: white;
+    }
+
+
+}
+
+.start-cooking-button {
+    color: white;
+    background-color: #D17557;
+}
+
+.add-to-recipes-button {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.start-cooking-button:hover {
+    background-color: hsl(15, 57%, 53%);
+}
+
+.add-to-recipes-button:not(:disabled):hover {
+    background-color: hsl(0, 0%, 95%);
+}

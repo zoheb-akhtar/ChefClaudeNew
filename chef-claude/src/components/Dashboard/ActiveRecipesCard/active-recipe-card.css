@@ -1,0 +1,31 @@
+.active-recipe-alert {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border: 1px solid #93c5fd;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.alert-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.alert-text {
+    color: #1e40af;
+    font-size: 0.95rem;
+}
+
+.continue-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}

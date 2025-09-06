@@ -1,0 +1,124 @@
+.your-recipe-card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    max-width: 350px;
+    height: 357px;
+}
+
+.your-recipe-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.your-recipe-card-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    padding-top: 0.5rem;
+    width: 100%;
+    border-radius: 1.125px;   
+}
+
+.your-recipe-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.your-recipe-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.your-recipe-status {
+    font-size: 12px;
+    opacity: 0.6;
+    padding: 6px;
+    border-radius: 24px;
+}
+
+.favorite-icon {
+    cursor: pointer;
+    width: 24px;
+}
+
+.your-recipe-card-top-right {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.three-dots-menu {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 50%;
+    transition: 0.15s ease background-color;
+}
+
+.three-dots-menu:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.delete-recipe-container {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 3;
+    padding: 12px;
+    border-radius: 8px;
+    color: #d32f2f;
+    top: -25px;
+    right: -25px;
+    cursor: pointer;
+    transition: 0.15s ease background-color;
+}
+
+.delete-recipe-container:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.trash-icon {
+    width: 18px;
+}
+
+.view-recipe {
+    background-color: hsl(0, 0%, 90%);
+    transition: 0.15s ease background-color;
+}
+
+.view-recipe:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.your-recipe-dietary-res-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.your-recipe-dietary-res {
+    font-size: 12px;
+    width: fit-content;
+    background-color: hsl(0, 0%, 88%);
+    padding: 6px;
+    border-radius: 24px;
+    margin-bottom: -8px;
+}

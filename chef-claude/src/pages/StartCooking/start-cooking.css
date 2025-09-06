@@ -1,0 +1,206 @@
+.start-cooking-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 3rem;
+    gap: 2.5rem;
+}
+
+.recipe-card-sc {
+    width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.recipe-title-sc {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.recipe-desc-sc,
+.recipe-info-sc {
+    margin-bottom: 24px;
+}
+
+.ings-top-sc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.ings-container {
+    margin-left: 18px;
+    margin-top: 12px;
+    line-height: 24px;
+}
+
+.recipe-ings-container-sc { 
+    padding: 0.6rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;   
+    font-weight: 500;
+    color: #333;
+}
+
+.dropdown-arrow-sc {
+    cursor: pointer;
+}
+
+.recipe-info-sc {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 0.4rem;
+}
+
+.recipe-info-label-sc {
+    font-weight: 500;
+}
+
+.start-cooking-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+.button-sc {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #D17557;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: fit-content; 
+    max-width: 100%;
+  }
+
+.scroll-button {
+    background-color: hsl(0, 0%, 40%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.scroll-button-arrow {
+    color: white;
+    width: 18px;
+}
+
+.scroll-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.progress-bar-sc {
+    width: 100%;
+    height: 12px;
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    overflow: hidden;
+  }
+  
+  .progress-bar-sc::-webkit-progress-bar {
+    background-color: #f0f0f0; 
+    border-radius: 12px;
+  }
+  
+  .progress-bar-sc::-webkit-progress-value {
+    background-color: #4caf50; 
+    border-radius: 12px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .progress-bar-sc::-moz-progress-bar {
+    background-color: #4caf50;
+    border-radius: 12px;
+  }
+
+  .step-indicator {
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .recipe-instruction {
+    font-size: 18px;
+  }
+
+  .start-cooking-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .show-next-container {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    background-color: hsla(0, 0%, 90%, 0.3);
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+  .show-next-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+  }
+
+  .next-step-container {
+    margin-top: 12px;
+  }
+
+  .steps-top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cancel-cooking-button {
+    font-size: 13px;
+    background-color: #f9f9f9;
+    color: #e53935;
+    border: 1px solid;
+    margin-top: -16px;
+    padding: 8px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .cancel-cooking-button:hover {
+    background-color: #e53935;
+    color: white;
+  }
+
+  .rate-button {
+    background-color: #EFBF04;
+    color: hsl(0, 0%, 30%);
+    transition: background-color 0.15s ease
+  }
+
+  .rate-button:hover {
+    background-color: hsl(48, 97%, 45%);
+  }
+
+  .recipe-not-found {
+    font-size: 42px;
+    font-weight: 500;
+  }
+
+

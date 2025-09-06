@@ -1,0 +1,71 @@
+.user-profile-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(0, 0%, 95.5%);
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 12px;
+    gap: 2rem;
+}
+
+.user-profile-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile-header {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.user-profile-date {
+    color: gray;
+    margin-top: -24px;
+}
+
+.user-profile-edit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 32px;
+    gap: 1.5rem;
+}
+
+
+.user-profile-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.user-profile-button {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s ease background-color;
+}
+
+.delete-account-button {
+    background-color: rgba(244, 67, 54, 0.15);;
+    color: #b71c1c;
+}
+
+.delete-account-button:hover {
+    background-color: rgba(244, 67, 54, 0.25);
+}
+
+.logout-button {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.logout-button:hover {
+    background-color: hsl(0, 0%, 80%)
+}
+

@@ -1,0 +1,19 @@
+.error-message-auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+    margin-bottom: 12px;
+    min-height: 1.5rem;
+    visibility: hidden;
+}
+
+.error-message-auth-container.active {
+    visibility: visible;
+}
+
+.auth-error {
+    font-size: 14px;
+    color: #ED4337;
+  }
+

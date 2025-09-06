@@ -8,7 +8,12 @@ const saltRounds = 10;
 const register = async (req, res) => {
     try {
         const { email, password, firstName, lastName } = req.body;
-        const users = await pool.query("SELECT * FROM users WHERE email = $1", [email])
+        const users = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+
+        if (password.trim().length < 8) {
+            return res.status(400).json({error: "Your password must be atleast 8 characters long"});
+        }
+        
         if (users.rows.length > 0) {
             return res.status(409).json({error: "A user with this email already exists."});
         }
