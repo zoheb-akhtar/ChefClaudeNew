@@ -9,7 +9,7 @@ export default function Home() {
     <div className="home-container">
 
       <main className="main">
-        <div className="hero">
+        <div className="hero fade-in-up">
           <div className="hero-icon-container">
             <div className="hero-icon">
               <ChefHat size={48} color="#ea580c" />
@@ -19,10 +19,10 @@ export default function Home() {
             </div>
           </div>
           
-          <h2 className="hero-title">
+          <p className="hero-title">
             Your AI-Powered<br />
             <span className="hero-highlight">Cooking Companion</span>
-          </h2>
+          </p>
           
           <p className="hero-subtitle">
             Discover personalized recipes, track your cooking journey, and level up your culinary skills with Chef Claude!

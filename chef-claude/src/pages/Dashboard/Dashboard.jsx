@@ -210,7 +210,7 @@ export default function Dashboard() {
 
 
     return (
-        <div className="dashboard-container">
+        <div className="dashboard-container fade-in-up">
             <div className="dashboard-header">
                 <h1>Hi {user?.first_name}!</h1>
                 <p>Here's what's cooking in your kitchen</p>

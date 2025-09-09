@@ -225,7 +225,7 @@ export default function YourRecipes() {
         </div>
       </div>
       
-      <div className="your-recipes-container">
+      <div className="your-recipes-container fade-in-up">
         {recipes && recipes.map((recipe) => {
           return <RecipeCard key={recipe.id} recipe={recipe} deleteRecipeFromPage={deleteRecipe} />
         })}

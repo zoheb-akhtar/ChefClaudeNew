@@ -10,7 +10,7 @@ const getUser = async (req, res) => {
         const loggedInUser = user.rows[0];
         res.status(200).json(loggedInUser);
     } catch (error) {
-        res.status(500).json({error: "Could not find the user. Please try again later."})
+        res.status(500).json({error: "Could not get user information. Please try again later."})
     }
    
 }

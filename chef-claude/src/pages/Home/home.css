@@ -3,7 +3,7 @@
   /* Main Content */
   .main {
     max-width: 1200px;
-    padding-top: 160px;
+    padding-top: 225px;
     margin: 0 auto;
   }
   
@@ -22,8 +22,8 @@
   }
   
   .hero-icon {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background: #fed7aa;
     border-radius: 50%;
     display: flex;
@@ -51,7 +51,7 @@
   }
   
   .hero-subtitle {
-    font-size: 20px;
+    font-size: 24px;
     color: #4b5563;
     margin-bottom: 40px;
     line-height: 1.6;
@@ -156,6 +156,20 @@
   .feature-text {
     color: #4b5563;
     line-height: 1.6;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   

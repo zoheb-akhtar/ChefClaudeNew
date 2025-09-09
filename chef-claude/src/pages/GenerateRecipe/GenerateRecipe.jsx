@@ -48,7 +48,10 @@ export default function GenerateRecipe() {
 
   function restart() {
     clearRecipes();
-    
+    localStorage.removeItem("ingredients");
+    setIngredients([]);
+    localStorage.removeItem("dietaryRestructions");
+    setDietaryRestrictions([]);
     Object.keys(localStorage).forEach((key) => {
       if (key.endsWith("_disabled")) {
         localStorage.removeItem(key);
@@ -59,7 +62,7 @@ export default function GenerateRecipe() {
   return (
     <>
         <div className="generate-recipes-page-container">
-          <div className="form-container">
+          <div className="form-container fade-in-up">
             <div className="top-container">
               <p className="generate-recipes-title">Generate Recipes</p>
               <p className="generate-recipes-subtitle">Enter a list of ingredients you have on hand to generate 3 unqiue recipes.</p><br></br>
@@ -98,11 +101,11 @@ export default function GenerateRecipe() {
               {recipes.length > 0 && <button className="clear-all-button" onClick={restart}>Clear All</button>}
           {error && <ErrorMessage error={error} bgColor="#fbfbf9"/>}
           </div>
-          <div ref={recipeSection} className="recipes-container">
-          {recipes && recipes.map((recipe) => {
+          {recipes && <div ref={recipeSection} className="recipes-container">
+          {recipes.map((recipe) => {
             return <GeneratedRecipeCard key={recipe.id} recipe={recipe} dietaryRestrictions={dietaryRestrictions}/>
           })}
-          </div>
+          </div>}
         </div>
         
     </>
