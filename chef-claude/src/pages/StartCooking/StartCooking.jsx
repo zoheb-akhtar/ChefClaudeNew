@@ -145,7 +145,7 @@ async function handleStepChange(step) {
       <p className="recipe-title-sc">{recipe.title}</p>
       <p className="recipe-desc-sc">{recipe.shortDescription}</p>
       <div className="recipe-info-sc">
-        <p className="recipe-diff-sc"><span className="recipe-info-label-sc">Difficulty: </span><span style={difficultyColor(recipe.difficultyLabel)}>{recipe.difficultyLabel}</span><span className="recipe-info-label-sc">, Score: </span><span style={difficultyColor(recipe)}>{recipe.difficultyScore} / 10</span></p>
+        <p className="recipe-diff-sc"><span className="recipe-info-label-sc">Difficulty: </span><span style={difficultyColor(recipe.difficultyLabel)}>{recipe.difficultyLabel}</span><span className="recipe-info-label-sc">, Score: </span><span style={difficultyColor(recipe.difficultyLabel)}>{recipe.difficultyScore} / 10</span></p>
         <p className="recipe-est-sc"><span className="recipe-info-label-sc">Step Count: </span> {recipe.instructions.length + 1} steps</p>
         <p className="recipe-est-sc"><span className="recipe-info-label-sc">Estimated Cook Time: </span> {recipe.estimatedCookTime} min</p>
         <p className="recipe-cals-sc"><span className="recipe-info-label-sc">Calories Per Serving: </span> {recipe.estimatedCaloriesPerServing}</p>

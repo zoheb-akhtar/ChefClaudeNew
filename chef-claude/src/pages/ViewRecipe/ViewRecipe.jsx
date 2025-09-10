@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import "./view-recipe.css"
 import { useLocation } from 'react-router'
 import flipFavorite from '../../utils/flipFavorite';
+import { progressLabel, progressLabelColor } from '../../utils/progressLabel';
 import CtaButton from '../../components/YourRecipes/CtaButton/CtaButton';
+import difficultyColor from '../../utils/difficultyColor.js';
 
 export default function ViewRecipe() {
     const location = useLocation();
     const {recipe, isFavorite} = location.state || {};
+    console.log(recipe)
     const [isFavorited, setIsFavorited] = useState(isFavorite)
     
     const parseIngredients = (ingredientsArray) => {
@@ -20,15 +23,6 @@ export default function ViewRecipe() {
     };
 
     const parsedIngredients = recipe ? parseIngredients(recipe.ingredients) : [];
-
-    const getDifficultyColor = (difficulty) => {
-        switch(difficulty.toLowerCase()) {
-            case 'easy': return '#22c55e';
-            case 'medium': return '#f59e0b';
-            case 'hard': return '#ef4444';
-            default: return '#6b7280';
-        }
-    };
 
     const formatDate = (dateString) => {
         return new Date(dateString).toLocaleDateString('en-US', {
@@ -53,7 +47,7 @@ export default function ViewRecipe() {
                     ))}
                     <span 
                         className="tag difficulty-tag" 
-                        style={{ color: getDifficultyColor(recipe.difficulty_label) }}
+                        style={difficultyColor(recipe.difficulty_label)}
                     >
                         {recipe.difficulty_label.toUpperCase()}
                     </span>
@@ -70,7 +64,7 @@ export default function ViewRecipe() {
                     <div className="overview-grid">
                         <div className="overview-item">
                             <span className="overview-label">Status</span>
-                            <span className="overview-value status-completed">{recipe.status}</span>
+                            <span style={{color: progressLabelColor(recipe.status).secondaryColor}}className="overview-value">{progressLabel(recipe.status)}</span>
                         </div>
                         <div className="overview-item">
                             <span className="overview-label">Times Cooked</span>

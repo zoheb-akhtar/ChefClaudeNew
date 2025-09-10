@@ -64,4 +64,10 @@
     background-color: hsl(0, 0%, 80%)
 }
 
+@media (max-width: 768px) {
+    .user-profile-header {
+        font-size: 28px;
+    }
+}
+
 

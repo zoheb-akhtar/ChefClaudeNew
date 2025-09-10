@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
 import "./sidebar.css"
 import SidebarLink from './SidebarLink/SidebarLink'
-import { NavLink, Link, Outlet, useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast'
-import api from '../../api/apiInstance'
+import { Link, useNavigate } from 'react-router-dom'
 import Modal from '../Modal/Modal'
 import logout from '../../utils/logout'
 
 
-export default function Sidebar() {
+export default function Sidebar({isOpen, setIsOpen}) {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   return (
     <>
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div>
+      <img className="mobile-nav-close" src="/images/x.svg"onClick={() => setIsOpen(false)}></img>
       <Link className="sidebar-page-link" to="/dashboard">
       <div className="logo-container-sidebar">
         <img className="logo-sidebar" src="/images/chef-claude-icon.png"/>

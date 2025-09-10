@@ -1,11 +1,11 @@
 function difficultyColor(difficultyLabel) {
 let difficultyColor;
-  if (difficultyLabel === "Easy") {
-    difficultyColor = "green";
-  } else if (difficultyLabel === "Medium") {
-    difficultyColor = "#ED7014";
-  } else if (difficultyLabel === "Hard") {
-    difficultyColor = "red";
+  if (difficultyLabel.toLowerCase() === "easy") {
+    difficultyColor = "#22c55e";
+  } else if (difficultyLabel.toLowerCase() === "medium") {
+    difficultyColor = "#f59e0b";
+  } else if (difficultyLabel.toLowerCase() === "hard") {
+    difficultyColor = "#ef4444";
   } else {
     difficultyColor = "black"
   }

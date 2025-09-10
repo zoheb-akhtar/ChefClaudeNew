@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import api from "../../api/apiInstance.js"
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage.jsx';
-import { useNavigate } from 'react-router';
 import useCurrentUser from '../../hooks/useCurrentUser.jsx';
 import Loader from '../../components/Loader/Loader.jsx';
-import toast from "react-hot-toast"
 import "./dashboard.css"
 import ActiveRecipeCard from '../../components/Dashboard/ActiveRecipesCard/ActiveRecipeCard.jsx';
 import MostUsedIngredient from '../../components/Dashboard/MostUsedIngredient/MostUsedIngredient.jsx';
 import RecentActivityCard from '../../components/Dashboard/RecentActivityCard/RecentActivityCard.jsx';
 
 export default function Dashboard() {
-    const navigate = useNavigate();
     const [user, error] = useCurrentUser();
     const [isLoading, setIsLoading] = useState(false);
     const [activeRecipes, setActiveRecipes] = useState([]);
@@ -38,32 +35,6 @@ export default function Dashboard() {
       newFavorites: 0,
       cookingDays: 0
     })
-
-    function recipeToPass(recipe) {
-      return {
-        createdAt: recipe.created_at,
-        currentStepIndex: recipe.current_step_index,
-        dietaryRestrictions: recipe.dietary_restrictions,
-        difficultyLabel: recipe.difficulty_label,
-        difficultyScore: recipe.difficulty_score,
-        estimatedCaloriesPerServing: recipe.estimated_calories_per_serving,
-        estimatedCookTime: recipe.estimated_cook_time,
-        id: recipe.id,
-        imageUrl: recipe.image_url,
-        ingredients: recipe.ingredients.map(ingredient => JSON.parse(ingredient)),
-        instructions: recipe.instructions,
-        isFavorite: recipe.is_favorite,
-        numberOfServings: recipe.number_of_servings,
-        rating: recipe.rating,
-        shortDescription: recipe.short_description,
-        status: recipe.status,
-        timesCooked: recipe.times_cooked,
-        title: recipe.title,
-        updatedAt: recipe.updated_at,
-        userId: recipe.user_id
-      }
-      
-    }
 
     useEffect(() => {
       setIsLoading(true);

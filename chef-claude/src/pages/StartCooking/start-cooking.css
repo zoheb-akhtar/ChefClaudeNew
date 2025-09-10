@@ -203,4 +203,20 @@
     font-weight: 500;
   }
 
+  @media (max-width: 768px) {
+    .start-cooking-page-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .recipe-card-sc,
+    .start-cooking-steps-container {
+      width: 93%
+  }
+
+  .button-sc {
+    font-size: 12px;
+  }
+  }
+
 

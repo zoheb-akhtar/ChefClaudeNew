@@ -27,3 +27,9 @@
     background-color: hsl(212, 72%, 54%);;
 }
 
+@media (max-width: 768px) {
+    .your-recipe-button {
+        font-size: 14px;
+    }
+}
+

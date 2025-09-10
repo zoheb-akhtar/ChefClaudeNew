@@ -9,6 +9,7 @@
     background-color: white;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     width: 525px;
+    z-index: 1001;
 }
 
 .modal-buttons-container {
@@ -159,3 +160,10 @@
     color: white;
     background-color: black;
 }
+
+@media (max-width: 768px) {
+    .modal {
+        width: 300px;
+    }
+}
+

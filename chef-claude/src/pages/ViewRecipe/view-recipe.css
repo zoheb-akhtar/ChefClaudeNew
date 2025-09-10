@@ -1,5 +1,5 @@
 .recipe-container {
-    max-width: 70vw;
+    max-width: 93%;
     min-height: 70vh;
     margin: 0;
     padding: 24px;
@@ -140,10 +140,6 @@
     font-size: 0.875rem;
 }
 
-.status-completed {
-    color: #059669;
-    text-transform: capitalize;
-}
 
 .ingredients-section {
     background: white;

@@ -9,20 +9,17 @@ export function progressLabel(status) {
 }
 
 export function progressLabelColor(status) {
-    let backgroundColor;
-    let color;
-
-    if (status === "in-progress") {
-        backgroundColor = "#D0E8F2";
-        color = "#0A4D6E";     
+     if (status === "in-progress") {
+        return {
+            backgroundColor: "#D0E8F2",
+            color: "#0A4D6E",
+            secondaryColor: "#1565C0"
+        };
     } else if (status === "completed") {
-        backgroundColor = "#A3D9A5"
-        color = "#1B5E20";
-    }
-
-    return {
-        backgroundColor: backgroundColor,
-        color: color
+        return {
+            backgroundColor: "#A3D9A5",
+            color: "#1B5E20",
+            secondaryColor: "#2E7D32"
+        };
     }
 }
-
