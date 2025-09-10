@@ -42,6 +42,12 @@ export default function UserProfile() {
 
 
   async function deleteAccount() {
+    const isDemoAccount = user?.email === "demo@example.com"
+    if (isDemoAccount) {
+      toast.error("You cannot delete this account because it is a demo account!");
+      return;
+    }
+
     try {
       await api.delete("/user/delete_account");
       logout(navigate)
@@ -52,6 +58,7 @@ export default function UserProfile() {
   }
 
 
+  
   if (isLoading) return <Loader />
   if (error) return <ErrorMessage error={error} bgColor="#fbfbf9"/>
   return (

@@ -6,6 +6,7 @@ import api from "../../api/apiInstance.js"
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import AuthInput from '../../components/Auth/AuthInput/AuthInput';
 import AuthCallToActionMsg from '../../components/Auth/AuthCallToActionMsg/AuthCallToActionMsg';
+import toast from 'react-hot-toast';
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -33,6 +34,7 @@ export default function Signup() {
       password, 
       firstName: firstName.trim(), 
       lastName: lastName.trim()});
+    toast.success("Account created successfully!")
      navigate("/login");
 
     } catch (error) {
