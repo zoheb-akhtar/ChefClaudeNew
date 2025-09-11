@@ -69,7 +69,7 @@ export default function RecipeCard({recipe, deleteRecipeFromPage}) {
             </div>
             <div className="your-recipe-card-bottom">
                 <CtaButton recipe={recipe} width="100%"/>
-                <button onClick={() => navigate("/viewrecipe", {state: {recipe, isFavorite: isFavorited}})} className="your-recipe-button view-recipe">View Recipe</button>
+                <button onClick={() => navigate("/viewrecipe", {state: {recipeId: recipe.id}})} className="your-recipe-button view-recipe">View Recipe</button>
             </div>
     </div>
   )

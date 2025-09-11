@@ -3,6 +3,8 @@ import api from "../../api/apiInstance.js"
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage.jsx';
 import useCurrentUser from '../../hooks/useCurrentUser.jsx';
 import Loader from '../../components/Loader/Loader.jsx';
+import getDifficultyCardStyle from '../../utils/getDifficultyCardStyle.js';
+import getFavoriteDifficulty from '../../utils/getFavoriteDifficulty.js';
 import "./dashboard.css"
 import ActiveRecipeCard from '../../components/Dashboard/ActiveRecipesCard/ActiveRecipeCard.jsx';
 import MostUsedIngredient from '../../components/Dashboard/MostUsedIngredient/MostUsedIngredient.jsx';
@@ -54,10 +56,6 @@ export default function Dashboard() {
 
       getDashboardInfo();
     }, [])
-
-    useEffect(() => {
-      console.log(activeRecipes)
-    }, [activeRecipes])
 
     async function getActiveRecipe() {
       try {
@@ -126,59 +124,8 @@ export default function Dashboard() {
       }
     }
 
-    function getFavoriteDifficulty() {
-      if (!userStats.averageDifficulty) {
-        return "None"
-      }
-      if (userStats.averageDifficulty > 0 && userStats.averageDifficulty <= 3) {
-        return "Easy"
-      } else if (userStats.averageDifficulty > 3  && userStats.averageDifficulty <= 6) {
-        return "Medium"
-      } else {
-        return "Hard"
-      }
-    }
-
-    function getDifficultyCardStyle() {
-      const avgDiff = userStats.averageDifficulty;
-
-      if (!avgDiff) {
-        return {
-          backgroundColor: '#f3f4f6', 
-          borderColor: '#e5e7eb',     
-          textColor: '#374151', 
-          accentColor: '#4b5563'
-        }
-      }
-      
-       if (avgDiff > 0 && avgDiff <= 3) {
-        return {
-          backgroundColor: '#dcfce7',
-          borderColor: '#bbf7d0',
-          textColor: '#15803d',
-          accentColor: '#16a34a'
-        };
-      } else if (avgDiff > 3 && avgDiff <= 6) {
-        return {
-          backgroundColor: '#fef3c7',
-          borderColor: '#fde68a',
-          textColor: '#92400e',
-          accentColor: '#d97706'
-        };
-      } else {
-        return {
-          backgroundColor: '#fee2e2',
-          borderColor: '#fecaca',
-          textColor: '#991b1b',
-          accentColor: '#dc2626'
-        };
-      }
-    }
-
     if (isLoading) return <Loader />
     if (error) return <ErrorMessage error={error} bgColor="#fbfbf9"/>
-
-
 
     return (
         <div className="dashboard-container fade-in-up">
@@ -252,12 +199,12 @@ export default function Dashboard() {
 
                     <div 
                     style={{
-                      backgroundColor: getDifficultyCardStyle().backgroundColor,
-                      borderColor: getDifficultyCardStyle().borderColor
+                      backgroundColor: getDifficultyCardStyle(userStats.averageDifficulty).backgroundColor,
+                      borderColor: getDifficultyCardStyle(userStats.averageDifficulty).borderColor
                     }}
                     className="highest-rated-card">
-                      <h3 style={{ color: getDifficultyCardStyle().textColor }}>Your Favorite Difficulty</h3>
-                      <h2 style={{ color: getDifficultyCardStyle().accentColor }}>{getFavoriteDifficulty()}</h2>
+                      <h3 style={{ color: getDifficultyCardStyle(userStats.averageDifficulty).textColor }}>Your Favorite Difficulty</h3>
+                      <h2 style={{ color: getDifficultyCardStyle(userStats.averageDifficulty).accentColor }}>{getFavoriteDifficulty(userStats.averageDifficulty)}</h2>
                     </div>
 
                     <div className="highest-rated-card">

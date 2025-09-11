@@ -8,7 +8,8 @@ const {addToCookLater,
     flipFavorite,
     deleteRecipe,
     cancelCooking,
-    rateRecipe} = require("../controllers/recipeController");
+    rateRecipe,
+    getRecipe} = require("../controllers/recipeController");
 const authenticateToken = require("../middleware/authorization.js");
 const router = express.Router();
 
@@ -19,6 +20,8 @@ router.post("/start_recipe", authenticateToken, startRecipe);
 router.get("/get_current_step/:recipeId", authenticateToken, getCurrentStep);
 
 router.get("/get_all_recipes", authenticateToken, getAllRecipes);
+
+router.get("/recipe/:recipeId", authenticateToken, getRecipe);
 
 router.patch("/finish_recipe", authenticateToken, finishRecipe);
 

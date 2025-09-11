@@ -289,6 +289,20 @@ const rateRecipe = async (req, res) => {
     }
 }
 
+const getRecipe = async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const {recipeId} = req.params;
+        const recipeResult = await pool.query("SELECT * FROM recipes where id = $1 AND user_id = $2", [recipeId, userId]);
+        if (recipeResult.rows.length === 0) {
+            return res.status(404).json({error: "Recipe not found"})
+        } 
+        res.status(200).json({recipe: recipeResult.rows[0]})
+    } catch (error) {
+        res.status(500).json({error: "Could not get the recipe. Please try again later."});
+    }
+}
+
 module.exports = {addToCookLater, 
                 startRecipe, 
                 finishRecipe,
@@ -298,7 +312,8 @@ module.exports = {addToCookLater,
                 flipFavorite,
                 deleteRecipe,
                 cancelCooking,
-                rateRecipe};
+                rateRecipe,
+                getRecipe};
 
 
 

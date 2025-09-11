@@ -1,16 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./view-recipe.css"
 import { useLocation } from 'react-router'
 import flipFavorite from '../../utils/flipFavorite';
 import { progressLabel, progressLabelColor } from '../../utils/progressLabel';
 import CtaButton from '../../components/YourRecipes/CtaButton/CtaButton';
 import difficultyColor from '../../utils/difficultyColor.js';
+import api from '../../api/apiInstance';
+import toast from 'react-hot-toast';
+import Loader from '../../components/Loader/Loader';
+import formatDate from '../../utils/formatDate.js';
 
 export default function ViewRecipe() {
     const location = useLocation();
-    const {recipe, isFavorite} = location.state || {};
-    console.log(recipe)
-    const [isFavorited, setIsFavorited] = useState(isFavorite)
+    const {recipeId} = location.state || {};
+    const [recipe, setRecipe] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(false);
+
+
+    useEffect(() => {
+        async function getRecipe() {
+            setIsLoading(true)
+            try {
+                const res = await api.get(`/recipes/recipe/${recipeId}`);
+                setRecipe(res.data.recipe);
+                setIsFavorite(res.data.recipe.is_favorite)
+            } catch (error) {
+                toast.error(error?.response?.data?.error || "Something went wrong. Please try again later.")
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        getRecipe();
+
+    }, [recipeId])
     
     const parseIngredients = (ingredientsArray) => {
         return ingredientsArray.map(ingredientStr => {
@@ -24,20 +48,13 @@ export default function ViewRecipe() {
 
     const parsedIngredients = recipe ? parseIngredients(recipe.ingredients) : [];
 
-    const formatDate = (dateString) => {
-        return new Date(dateString).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    };
-
+    if (isLoading || !recipe) return <Loader />
     return (
         <div className="recipe-container">
             <div className="recipe-header">
                 <div className="recipe-title-section">
                     <h1 className="recipe-title">{recipe.title}</h1>
-                    <img onClick={() => flipFavorite(setIsFavorited, recipe.id)} src={isFavorited ? "/images/heart-fill-red.svg" : "/images/heart-fill-gray.svg"} className="favorite-heart"></img>
+                    <img onClick={() => flipFavorite(setIsFavorite, recipe.id)} src={isFavorite ? "/images/heart-fill-red.svg" : "/images/heart-fill-gray.svg"} className="favorite-heart"></img>
                 </div>
                 <p className="recipe-description">{recipe.short_description}</p>
                 
