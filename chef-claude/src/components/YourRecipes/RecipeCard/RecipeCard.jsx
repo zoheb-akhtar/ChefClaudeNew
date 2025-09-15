@@ -8,15 +8,21 @@ import CtaButton from '../CtaButton/CtaButton.jsx'
 import "./recipe-card.css"
 import Modal from '../../Modal/Modal.jsx'
 import { useNavigate } from 'react-router'
+import useCurrentUser from '../../../hooks/useCurrentUser.jsx'
 
 
 export default function RecipeCard({recipe, deleteRecipeFromPage}) {
+    const [user, error, isLoading] = useCurrentUser();
     const [isFavorited, setIsFavorited] = useState(recipe && recipe.is_favorite);
     const [menuToggled, setMenuToggled] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     async function deleteRecipe() {
+        if (user?.email === "demo@example.com") {
+            toast.error("You cannot delete recipes becuase you are using a demo account!");
+            return;
+        }
         try {
             await api.delete("/recipes/delete_recipe", {
                 data: {

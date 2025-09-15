@@ -44,7 +44,7 @@ export default function UserProfile() {
   async function deleteAccount() {
     const isDemoAccount = user?.email === "demo@example.com"
     if (isDemoAccount) {
-      toast.error("You cannot delete this account because it is a demo account!");
+      toast.error("You cannot delete this account because you are using a demo account!");
       return;
     }
 
@@ -58,7 +58,6 @@ export default function UserProfile() {
   }
 
 
-  
   if (isLoading) return <Loader />
   if (error) return <ErrorMessage error={error} bgColor="#fbfbf9"/>
   return (
@@ -78,6 +77,7 @@ export default function UserProfile() {
               includeModal={false}
               route="/user/edit_first_name"
               setPrevVal={setPrevFirst}
+              user={user}
               />
 
               <UserProfileInput 
@@ -90,6 +90,7 @@ export default function UserProfile() {
               includeModal={false}
               route="/user/edit_last_name"
               setPrevVal={setPrevLast}
+              user={user}
               />
   
               <UserProfileInput 
@@ -104,6 +105,7 @@ export default function UserProfile() {
               route="/user/edit_email"
               setPrevVal={setPrevEmail}
               showModal={showEmailModal}
+              user={user}
               />
 
             </div>

@@ -65,7 +65,7 @@ export default function GenerateRecipe() {
           <div className="form-container fade-in-up">
             <div className="top-container">
               <p className="generate-recipes-title">Generate Recipes</p>
-              <p className="generate-recipes-subtitle">Enter a list of ingredients you have on hand to generate 3 unqiue recipes.</p><br></br>
+              <p className="generate-recipes-subtitle">Enter a list of ingredients you have on hand and Chef Claude will generate 3 unqiue and diverse recipes for you to cook.</p><br></br>
               <p>You need at least 4 ingredients to generate recipes.</p>
             </div>
 

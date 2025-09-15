@@ -6,3 +6,10 @@
     margin-top: 30vh;
 }
 
+@media (max-width: 768px) {
+    .loader-container {
+        height: 20vh;
+        width: 100vw;
+    }
+}
+

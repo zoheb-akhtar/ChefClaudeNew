@@ -4,7 +4,7 @@ import Modal from '../../Modal/Modal';
 import api from '../../../api/apiInstance';
 import "./user-profile-input.css"
 
-export default function UserProfileInput({editValue, inputLabel, setValue, value, setEditValue, prevValue, setShowModal, includeModal, route, setPrevVal, showModal}) {
+export default function UserProfileInput({editValue, inputLabel, setValue, value, setEditValue, prevValue, setShowModal, includeModal, route, setPrevVal, showModal, user}) {
     function showModalFunc() {
         if (value === prevValue) {
             setEditValue(true);
@@ -14,6 +14,13 @@ export default function UserProfileInput({editValue, inputLabel, setValue, value
     }
 
     async function changeValue() {
+      const isDemoAccount = user?.email === "demo@example.com"
+      if (isDemoAccount && value != prevValue) {
+      toast.error("You cannot edit this field because you are using a demo account!");
+      setEditValue(true);
+      setValue(prevValue)
+      return;
+      }
         if (value === prevValue) {
           setEditValue(true);
           return;
