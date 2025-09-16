@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChefHat, Clock, Star, BookOpen, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import './home.css';
 
