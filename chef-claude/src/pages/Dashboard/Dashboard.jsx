@@ -135,7 +135,7 @@ export default function Dashboard() {
             </div>
 
             {activeRecipes.length > 0 && activeRecipes.map((recipe, index) => {
-              return <ActiveRecipeCard recipe={recipe}/>
+              return <ActiveRecipeCard key={index} recipe={recipe}/>
             })}
                 
             
@@ -174,7 +174,7 @@ export default function Dashboard() {
                       </div>}
                     <div className="recent-recipes">
                         {recentActivity.map((recipe, index) => {
-                            return <RecentActivityCard recipe={recipe} index={index}/>
+                            return <RecentActivityCard key={index} recipe={recipe} index={index}/>
                           })}
                     </div>
                 </div>
@@ -229,7 +229,7 @@ export default function Dashboard() {
                           <p className='no-activity-text'>No favorite ingredients.</p>
                           </div>}
                             {userStats.mostUsedIngredients.slice(0, 5).map((ingredient, index) => {
-                                return <MostUsedIngredient ingredient={ingredient} index={index}/>
+                                return <MostUsedIngredient key={index} ingredient={ingredient} index={index}/>
                               })}
                         </div>
                     </div>

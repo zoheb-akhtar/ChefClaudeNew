@@ -61,10 +61,11 @@ const refreshToken = async (req, res) => {
       const user = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
       const tokens = jwtTokens(user);
       
+      const isProduction = process.env.NODE_ENV === "production"
       res.cookie('refresh_token', tokens.refreshToken, {
         httpOnly: true,
-        secure: false,        
-        sameSite: 'Lax', 
+        secure: isProduction,        
+        sameSite: isProduction ? 'None' : 'Lax', 
       });
   
       res.json({ accessToken: tokens.accessToken });
