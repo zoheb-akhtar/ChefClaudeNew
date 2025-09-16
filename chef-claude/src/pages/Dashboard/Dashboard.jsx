@@ -9,12 +9,14 @@ import "./dashboard.css"
 import ActiveRecipeCard from '../../components/Dashboard/ActiveRecipesCard/ActiveRecipeCard.jsx';
 import MostUsedIngredient from '../../components/Dashboard/MostUsedIngredient/MostUsedIngredient.jsx';
 import RecentActivityCard from '../../components/Dashboard/RecentActivityCard/RecentActivityCard.jsx';
+import { useNavigate } from 'react-router';
 
 export default function Dashboard() {
     const [user, error] = useCurrentUser();
     const [isLoading, setIsLoading] = useState(false);
     const [activeRecipes, setActiveRecipes] = useState([]);
     const [noActiveRecipe, setNoActiveRecipe] = useState(false);
+    const navigate = useNavigate()
     const [userJourney, setUserJourney] = useState({
       totalRecipesCreated: 0,
       mostCookedRecipe: {
