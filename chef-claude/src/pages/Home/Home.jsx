@@ -4,20 +4,12 @@ import { useNavigate } from 'react-router';
 import './home.css';
 
 export default function Home() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   return (
     <div className="home-container">
 
       <main className="main">
         <div className="hero fade-in-up">
-          <div className="hero-icon-container">
-            <div className="hero-icon">
-              <ChefHat size={48} color="#ea580c" />
-              <div className="sparkle-icon">
-                <Sparkles size={24} color="#eab308" />
-              </div>
-            </div>
-          </div>
           
           <p className="hero-title">
             Your AI-Powered<br />
@@ -36,7 +28,7 @@ export default function Home() {
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon blue">
-              <BookOpen size={24} color="#2563eb" />
+              <img src="/images/book-open-blue.svg"></img>
             </div>
             <h3 className="feature-title">Smart Recipe Discovery</h3>
             <p className="feature-text">
@@ -46,7 +38,7 @@ export default function Home() {
 
           <div className="feature-card">
             <div className="feature-icon green">
-              <Clock size={24} color="#16a34a" />
+              <img src="/images/clock-green.svg"></img>
             </div>
             <h3 className="feature-title">Track Your Progress</h3>
             <p className="feature-text">
@@ -56,7 +48,7 @@ export default function Home() {
 
           <div className="feature-card">
             <div className="feature-icon purple">
-              <Star size={24} color="#9333ea" />
+              <img src="/images/star-purple.svg"></img>
             </div>
             <h3 className="feature-title">Rate & Review</h3>
             <p className="feature-text">

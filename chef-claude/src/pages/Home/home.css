@@ -3,7 +3,7 @@
   /* Main Content */
   .main {
     max-width: 1200px;
-    padding-top: 225px;
+    padding-top: 150px;
     margin: 0 auto;
   }
   
@@ -192,7 +192,7 @@
     }
     
     .main {
-      padding-top: 200px
+      padding-top: 240px
     }
     
     .hero-title {

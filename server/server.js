@@ -7,10 +7,11 @@ const aiRouter = require("./routes/aiRoutes.js");
 const recipeRouter = require("./routes/recipeRoutes.js");
 const dashboardRouter = require("./routes/userDashboardRoutes.js");
 const port = 8080;
+require("dotenv").config();
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }));
 
