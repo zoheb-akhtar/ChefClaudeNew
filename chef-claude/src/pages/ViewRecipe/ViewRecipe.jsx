@@ -35,6 +35,7 @@ export default function ViewRecipe() {
         getRecipe();
 
     }, [recipeId])
+
     
     const parseIngredients = (ingredientsArray) => {
         return ingredientsArray.map(ingredientStr => {

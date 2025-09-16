@@ -21,5 +21,12 @@ export function progressLabelColor(status) {
             color: "#1B5E20",
             secondaryColor: "#2E7D32"
         };
+    } else if (status === "cook-later") {
+        return {
+            backgroundColor: "white",
+            color: "black",
+            secondaryColor: "black"
+
+        }
     }
 }
