@@ -1,17 +1,8 @@
 import React from 'react'
-import { Oval } from 'react-loader-spinner'
+import "./inlineLoader.css"
 
 export default function InlineLoader() {
   return (
-    <Oval 
-    visible={true}
-    height="15"
-    width="15"
-    color="#ffffff"
-    secondaryColor="#fff5e1"
-    ariaLabel="oval-loading"
-    wrapperStyle={{}}
-    wrapperClass=""
-    />
+    <div className="inline-loader-spinner"></div>
   )
 }
