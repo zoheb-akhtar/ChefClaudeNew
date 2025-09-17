@@ -43,7 +43,12 @@ const login = async (req, res) => {
         }
 
         let tokens = jwtTokens(users.rows[0]);
-        res.cookie('refresh_token', tokens.refreshToken, {httpOnly:true});
+        const isProduction = process.env.NODE_ENV === "production"
+        res.cookie('refresh_token', tokens.refreshToken, {
+            httpOnly: true,
+            secure: isProduction,        
+            sameSite: isProduction ? 'None' : 'Lax', 
+        });
         res.json(tokens);
 
     } catch (error) {
