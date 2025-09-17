@@ -2,6 +2,8 @@
 
 Chef Claude is an AI-powered recipe generator that helps you turn your available ingredients into delicious meals. It’s designed to make cooking easier, smarter, and more fun—whether you’re cleaning out your fridge or planning meals ahead.
 
+👉 **Check it out [here](https://chefclaudeai.vercel.app)**
+
 ## ✨ Features
 
 - **AI-Powered Recipe Suggestions**  
