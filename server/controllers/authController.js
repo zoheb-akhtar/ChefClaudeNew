@@ -47,7 +47,10 @@ const login = async (req, res) => {
         res.cookie('refresh_token', tokens.refreshToken, {
             httpOnly: true,
             secure: isProduction,        
-            sameSite: isProduction ? 'None' : 'Lax', 
+            sameSite: 'Lax', 
+            domain: ".chefclaudeai.com",
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            path: '/'
         });
         res.json(tokens);
 
@@ -70,7 +73,10 @@ const refreshToken = async (req, res) => {
       res.cookie('refresh_token', tokens.refreshToken, {
         httpOnly: true,
         secure: isProduction,        
-        sameSite: isProduction ? 'None' : 'Lax', 
+        sameSite: 'Lax',
+        domain: ".chefclaudeai.com",
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        path: '/'
       });
   
       res.json({ accessToken: tokens.accessToken });
@@ -81,7 +87,14 @@ const refreshToken = async (req, res) => {
 
 const deleteToken = async (req, res) => {
     try {
-        res.clearCookie('refresh_token');
+        const isProduction = process.env.NODE_ENV === "production"
+        res.clearCookie('refresh_token', {
+            httpOnly: true,
+            secure: isProduction,
+            sameSite: 'Lax',
+            domain: ".chefclaudeai.com",
+            path: '/'
+        });
         return res.status(200).json({message: "Refresh token deleted"});
     } catch (error) {
         res.status(500).json({error: "Error in deleting the token."});
