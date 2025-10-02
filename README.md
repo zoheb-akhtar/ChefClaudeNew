@@ -4,6 +4,10 @@ Chef Claude is an AI-powered recipe generator that helps you turn your available
 
 👉 **Check it out [here](https://chefclaudeai.vercel.app)**
 
+To demo the site, login with the following credentials:
+  Email: demo@example.com
+  Password: test1234
+
 ## ✨ Features
 
 - **AI-Powered Recipe Suggestions**  
